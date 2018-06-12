@@ -1,0 +1,8 @@
+<resources>
+    <style name="AppTheme.Default" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:screenOrientation">reverseLandscape</item>
+        <item name="android:background">@color/AppColor.Background</item>
+    </style>
+</resources>

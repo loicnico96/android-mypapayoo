@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context="com.salinco.papayoo.GameActivity">
+
+    <TextView
+        android:id="@+id/Text_ActionDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/DropArea_FieldCards"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="casual"
+        android:text="@string/Action.Select.SideCards"
+        android:textAlignment="center"
+        android:textColor="@color/AppColor.HeaderText"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Text_ActionValidation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DropArea_FieldCards"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="casual"
+        android:text="@string/Action.Validate"
+        android:textAlignment="center"
+        android:textColor="@color/AppColor.HeaderText"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/Layout_Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/Header.Margin"
+        android:background="@android:color/transparent"
+        android:clipChildren="false">
+
+        <ImageView
+            android:id="@+id/Image_HeaderLine"
+            android:layout_width="@dimen/Header.LineWidth"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/header_line" />
+
+        <ImageView
+            android:id="@+id/Image_GameColor"
+            android:layout_width="@dimen/Header.ImageIconSize"
+            android:layout_height="@dimen/Header.ImageIconSize"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/icon_spades" />
+
+        <RelativeLayout
+            android:id="@+id/Layout_ActionTimer"
+            android:layout_width="@dimen/Header.TimerBarSize"
+            android:layout_height="@dimen/Header.TimerBarSize"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent">
+
+            <ProgressBar
+                android:id="@+id/ProgressBar_ActionTimer"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/timer_circular" />
+
+            <TextView
+                android:id="@+id/Text_ActionTimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:fontFamily="casual"
+                android:includeFontPadding="false"
+                android:paddingTop="3dp"
+                android:text="99"
+                android:textAlignment="center"
+                android:textColor="@color/AppColor.HeaderText"
+                android:textSize="@dimen/Header.TimerFontSize"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Layout_HeaderPlayers"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/Header.TotalHeight"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:clipChildren="false">
+
+            <RelativeLayout
+                android:id="@+id/Layout_HeaderPlayer0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/Image_PlayerTurn0"
+                    android:layout_width="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_height="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/icon_hearts" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerName0"
+                    android:layout_width="@dimen/Header.PlayerNameMaxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="Player0"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerPts0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Layout_HeaderPlayer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/Layout_HeaderPlayer0"
+                android:layout_marginLeft="@dimen/Header.PlayerNameMaxWidth"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/Image_PlayerTurn1"
+                    android:layout_width="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_height="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/icon_spades" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerName1"
+                    android:layout_width="@dimen/Header.PlayerNameMaxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="Player1"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerPts1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Layout_HeaderPlayer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/Layout_HeaderPlayer1"
+                android:layout_marginLeft="@dimen/Header.PlayerNameMaxWidth"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/Image_PlayerTurn2"
+                    android:layout_width="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_height="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/icon_clubs" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerName2"
+                    android:layout_width="@dimen/Header.PlayerNameMaxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="Player2"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerPts2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Layout_HeaderPlayer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/Layout_HeaderPlayer2"
+                android:layout_marginLeft="@dimen/Header.PlayerNameMaxWidth"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/Image_PlayerTurn3"
+                    android:layout_width="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_height="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/icon_diamonds" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerName3"
+                    android:layout_width="@dimen/Header.PlayerNameMaxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="Player3"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerPts3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Layout_HeaderPlayer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/Layout_HeaderPlayer3"
+                android:layout_marginLeft="@dimen/Header.PlayerNameMaxWidth"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/Image_PlayerTurn4"
+                    android:layout_width="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_height="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/icon_hearts" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerName4"
+                    android:layout_width="@dimen/Header.PlayerNameMaxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="Player4"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerPts4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Layout_HeaderPlayer5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/Layout_HeaderPlayer4"
+                android:layout_marginLeft="@dimen/Header.PlayerNameMaxWidth"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/Image_PlayerTurn5"
+                    android:layout_width="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_height="@dimen/Header.PlayerIconSize.Normal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/icon_spades" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerName5"
+                    android:layout_width="@dimen/Header.PlayerNameMaxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="Player5"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Text_PlayerPts5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="casual"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/AppColor.HeaderText"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/Header.TextSize.Normal"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/DropArea_FieldCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:clipChildren="false"
+        android:tag="DropArea_FieldCards">
+
+        <RelativeLayout
+            android:id="@+id/Layout_FieldCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent">
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_FieldCard0"
+                android:layout_width="@dimen/FieldCard.CardWidth"
+                android:layout_height="@dimen/FieldCard.CardHeight"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:duplicateParentState="true"
+                android:padding="@dimen/FieldCard.BorderWidth"
+                app:srcCompat="@drawable/card_empty" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_FieldCard1"
+                android:layout_width="@dimen/FieldCard.CardWidth"
+                android:layout_height="@dimen/FieldCard.CardHeight"
+                android:layout_alignLeft="@id/Image_FieldCard0"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/FieldCard.Spacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/FieldCard.BorderWidth"
+                app:srcCompat="@drawable/card_empty" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_FieldCard2"
+                android:layout_width="@dimen/FieldCard.CardWidth"
+                android:layout_height="@dimen/FieldCard.CardHeight"
+                android:layout_alignLeft="@id/Image_FieldCard1"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/FieldCard.Spacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/FieldCard.BorderWidth"
+                app:srcCompat="@drawable/card_empty" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_FieldCard3"
+                android:layout_width="@dimen/FieldCard.CardWidth"
+                android:layout_height="@dimen/FieldCard.CardHeight"
+                android:layout_alignLeft="@id/Image_FieldCard2"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/FieldCard.Spacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/FieldCard.BorderWidth"
+                app:srcCompat="@drawable/card_empty" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_FieldCard4"
+                android:layout_width="@dimen/FieldCard.CardWidth"
+                android:layout_height="@dimen/FieldCard.CardHeight"
+                android:layout_alignLeft="@id/Image_FieldCard3"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/FieldCard.Spacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/FieldCard.BorderWidth"
+                app:srcCompat="@drawable/card_empty" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_FieldCard5"
+                android:layout_width="@dimen/FieldCard.CardWidth"
+                android:layout_height="@dimen/FieldCard.CardHeight"
+                android:layout_alignLeft="@id/Image_FieldCard4"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/FieldCard.Spacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/FieldCard.BorderWidth"
+                app:srcCompat="@drawable/card_empty" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/DropArea_HandCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/HandCard.BottomOffset"
+        android:background="@android:color/transparent"
+        android:clipChildren="false"
+        android:tag="DropArea_HandCards">
+
+        <RelativeLayout
+            android:id="@+id/Layout_HandCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent">
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard0"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard1"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard0"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard2"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard1"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard3"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard2"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard4"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard3"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard5"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard4"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard6"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard5"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard7"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard6"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard8"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard7"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard9"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard8"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard10"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard9"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard11"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard10"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard12"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard11"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard13"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard12"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard14"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard13"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard15"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard14"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard16"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard15"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard17"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard16"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard18"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard17"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+
+            <com.salinco.papayoo.game.CardView
+                android:id="@+id/Image_HandCard19"
+                android:layout_width="@dimen/HandCard.CardWidth"
+                android:layout_height="@dimen/HandCard.CardHeight"
+                android:layout_alignLeft="@id/Image_HandCard18"
+                android:layout_marginLeft="@dimen/HandCard.MinSpacing"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/HandCard.BorderWidth" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.widget.RelativeLayout>

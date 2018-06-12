@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Papayoo</string>
+    <string name="Action.Select.SideCards">Choose the cards to give to your neighbor.</string>
+    <string name="Action.Select.PlayCards">Play a card.</string>
+    <string name="Action.Select.DiscardCards">Discard a card.</string>
+    <string name="Action.Validate">Let\'s go.</string>
+</resources>

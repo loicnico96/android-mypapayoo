@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="HandCard.BorderWidth">4dp</dimen>
+    <dimen name="HandCard.BottomOffset">-36dp</dimen>
+    <dimen name="HandCard.CardWidth">78dp</dimen>
+    <dimen name="HandCard.CardHeight">114dp</dimen>
+    <dimen name="HandCard.FocusOffset">-12dp</dimen>
+    <dimen name="HandCard.TotalSpacing">480dp</dimen>
+    <dimen name="HandCard.MinSpacing">24dp</dimen>
+    <dimen name="HandCard.MaxSpacing">48dp</dimen>
+
+    <dimen name="Header.ImageIconSize">60dp</dimen>
+    <dimen name="Header.PlayerIconSize.Normal">12dp</dimen>
+    <dimen name="Header.PlayerIconSize.Special">18dp</dimen>
+    <dimen name="Header.LineWidth">450dp</dimen>
+    <dimen name="Header.Margin">12dp</dimen>
+    <dimen name="Header.PlayerNameMaxWidth">72dp</dimen>
+    <dimen name="Header.PlayerNameOffset.Special">-6dp</dimen>
+    <dimen name="Header.TextSize.Normal">12dp</dimen>
+    <dimen name="Header.TextSize.Special">18dp</dimen>
+    <dimen name="Header.TimerFontSize">27dp</dimen>
+    <dimen name="Header.TimerBarSize">60dp</dimen>
+    <dimen name="Header.TotalHeight">60dp</dimen>
+    <dimen name="Header.TotalWidth">420dp</dimen>
+
+    <dimen name="FieldCard.BorderWidth">4dp</dimen>
+    <dimen name="FieldCard.CardWidth">78dp</dimen>
+    <dimen name="FieldCard.CardHeight">114dp</dimen>
+    <dimen name="FieldCard.Spacing">96dp</dimen>
+
+</resources>
